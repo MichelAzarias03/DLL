@@ -28,6 +28,7 @@ PROMPT *********************** Creation de la table Annonces reussi !! *********
 
 @Tables/Attributs.sql
 PROMPT *********************** Creation de la table Attributs reussi !! ************************
+
 @Tables/BesoinClient.sql
 PROMPT *********************** Creation de la table BesoinClient reussi !! ************************
 
