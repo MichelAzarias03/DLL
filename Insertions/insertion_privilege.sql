@@ -1,91 +1,17 @@
--- CREATE SEQUENCE id_utilisateur
--- MINVALUE 1
--- START WITH 1
--- INCREMENT BY 1
--- CACHE 50;
 
--- CREATE SEQUENCE id_pressing
--- MINVALUE 1
--- START WITH 1
--- INCREMENT BY 1
--- CACHE 50;
+INSERT INTO "CSI"."PRESSING" (ID_PRESSING, NOM_PRESSING, DESCRIPTION_PRESSING) VALUES ('1', 'Logbessou pressing', 'lavage de tout type de linges a sac et a l''eau')
 
--- CREATE SEQUENCE id_incre
--- MINVALUE 1
--- START WITH 1
--- INCREMENT BY 1
--- CACHE 50;
+Validation (commit) effectuée
 
 
-INSERT INTO PRIVILEGE
-VALUES(
-    seqid_utilisateur.nextval,
-    seqid_pressing.nextval,
-    seqid_incre.nextval,
-    'Responsable'  
-);
+UPDATE "CSI"."PRESSING" SET DESCRIPTION_PRESSING = 'lavage de tout type de linges a sec et a l''eau' WHERE ROWID = 'AAAE6/AABAAALHpAAA' AND ORA_ROWSCN = '609536'
 
-INSERT INTO PRIVILEGE
-VALUES(
-    seqid_utilisateur.nextval,
-    seqid_pressing.nextval,
-    seqid_incre.nextval,
-    'Manager'  
-);
+Validation (commit) effectuée
 
-INSERT INTO PRIVILEGE
-VALUES(
-    seqid_utilisateur.nextval,
-    seqid_pressing.nextval,
-    seqid_incre.nextval,
-    'administrateur'  
-);
 
-INSERT INTO PRIVILEGE
-VALUES(
-    seqid_utilisateur.nextval,
-    seqid_pressing.nextval,
-    seqid_incre.nextval,
-    'Controleur'  
-);
+INSERT INTO "CSI"."PRESSING" (ID_PRESSING, NOM_PRESSING, DESCRIPTION_PRESSING) VALUES ('2', 'Bimoule pressing', 'blanchissement et repassage des linges')
 
-INSERT INTO PRIVILEGE
-VALUES(
-    seqid_utilisateur.nextval,
-    seqid_pressing.nextval,
-    seqid_incre.nextval,
-    'Formateur'  
-);
+Validation (commit) effectuée
 
-INSERT INTO PRIVILEGE
-VALUES(
-    seqid_utilisateur.nextval,
-    seqid_pressing.nextval,
-    seqid_incre.nextval,
-    'Maintenacier'  
-);
 
-INSERT INTO PRIVILEGE
-VALUES(
-    seqid_utilisateur.nextval,
-    seqid_pressing.nextval,
-    seqid_incre.nextval,
-    'Securite'  
-);
-
-INSERT INTO PRIVILEGE
-VALUES(
-    seqid_utilisateur.nextval,
-    seqid_pressing.nextval,
-    seqid_incre.nextval,
-    'Courcier'  
-);
-
-INSERT INTO PRIVILEGE
-VALUES(
-    seqid_utilisateur.nextval,
-    seqid_pressing.nextval,
-    seqid_incre.nextval,
-    'Receptioniste'  
-);
-commit;
+INSERT INTO "CSI"."UTILISATEURS" (IDUSER, USERNAME, NOM, PRENOM, TELEPHONE, USERPASSWORD) VALUES ('1', 'arobase', 'zoldick', 'kirua', '566334455', 'arobase')
