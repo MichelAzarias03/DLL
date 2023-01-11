@@ -1,3 +1,62 @@
+
+SET verify off
+
+SET echo off
+
+DECLARE
+    v_id_session     NUMBER(20);
+    v_id_utilisateur sessions.id_utilisateur%type;
+BEGIN
+    dbms_output.put_line('--------------------- Open Pressing  consol   APP ----------------------------');
+    SELECT
+        sys_context('userenv',
+        'sessionid') session_id INTO v_id_session
+    FROM
+        dual;
+    SELECT
+        id_utilisateur INTO v_id_utilisateur
+    FROM
+        sessions
+    WHERE
+        id_session_oracle = v_id_session;
+    dbms_output.put_line('Vous etes connecte');
+EXCEPTION
+    WHEN no_data_found THEN
+        dbms_output.put_line('Vous etes pas connecte');
+END;
+/
+
+prompt '  1)  Connexion ';
+
+prompt '  2)  Inscription ';
+
+prompt '  3)  Consulter les offres ';
+
+prompt '  4)  Consulter les annonces ';
+
+prompt '  5)  Consulter les pressings ';
+
+prompt '  6)  Creer un presssings';
+
+prompt '  99)  Precedent';
+
+define tml='-';
+
+accept choix prompt 'Entrez votre choix '
+
+SET echo off
+
+SELECT
+    sys_context('userenv',
+    'sessionid') session_id
+FROM
+    dual;
+
+@'&CHOIX'
+
+/*
+
+
 CREATE OR REPLACE PROCEDURE lister_offres
   IS
   BEGIN
@@ -108,3 +167,5 @@ BEGIN
          DBMS_OUTPUT.PUT_LINE('INVALID DAY');
     END CASE;
 END;
+
+*/
